@@ -20,4 +20,4 @@ jobs:
         env:
           TODOIST_API_TOKEN: ${{ secrets.TODOIST_API_TOKEN }}
         run: |
-          python todoist_countdown.py
+          python todoist.py
