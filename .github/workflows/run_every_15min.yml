@@ -1,24 +1,5 @@
-name: Run Todoist Countdown Every 15 Minutes
-
-on:
-  schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch: 
-
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-      - name: Run script
-        env:
-          TODOIST_API_TOKEN: ${{ secrets.TODOIST_API_TOKEN }}
-        run: |
-          python todoist.py
+- name: Run script
+  env:
+    TODOIST_TOKEN: ${{ secrets.TODOIST_TOKEN }}
+  run: |
+    python todoist.py
